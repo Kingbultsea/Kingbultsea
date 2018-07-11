@@ -1,0 +1,72 @@
+<template></template> 这是模板dehtmldom结构 
+<script></script>这是js内容你而已写一些页面的动态效果的和Vue逻辑代码 
+<style></style>这是css的内容 就是你平时写的css样式  <style scoped></style scoped>这个是可以起到模板作用的 
+sir  我有个疑问 就是style里面是可以src的吧 嗯 = = 怎么可能不可以 
+
+对了 <script> 里面 我不懂的是
+他直接 export default {
+} 这是什么 于是我去百度一下  这个是遵循什么的？原生的还是什么CommendJs??什么的的
+
+1.在一个模块中 export deafult 只能有一个 
+2.使用export defaylt 命令 为模块指定默认输出 这样就不需要知道所要加载模块的变量名 a.js  let sex = 'a'; exrort default sex (不需要大括号)
+3.其实是相当于为sex变量值起了一个系统默认的变量名default 自然defalut 只能有一个值 所以一个文件内 不能有多个export defalut
+4. import any from "./a.js"  console.log(any) //boy 
+5.components: {
+    ComponentA
+  } 这样 该VUE文件 template 就可以用组件啦 但是呢 这个文件export并不能 输出其他组件
+6.假如有些组件 要是全局的 这样你很多组件都要用到这个小组件 但是 每次都添加进 也太麻烦了吧 所以呢你可以通过require.context来全局注册这些常用的小组件  在main.js 主入口写哦 https://vuefe.cn/v2/guide/components-registration.html#自动化全局注册基本组件
+7.也就是说:template: '<App/>' 表示用<app></app>替换index.html里面的<div id="app"></div>
+
+
+那么export default里面的内容是什么呢？
+就是Vue.commponet('asd',{
+templated:"<div></div>"
+});  这样？https://www.cnblogs.com/xinhudong/p/7878899.html
+
+
+也是学完了吧 那么去复习下VUE的组件吧
+单个根元素 就是组件死也要有一个东西包括所有这里的<template>也是一样的
+vm.$emit(func,[]);
+https://vuefe.cn/v2/guide/components.html#在-event-事件中发送一个值
+<button v-bind:value='value' v-on:input="$emit('input',$event.target.value)">
+就是触发input事件 上面的 直接v-model 就是v-on:input="A = $event" 可以看出event就是触发事件后的参数吧
+<slot>就是插槽 就是上面<A>就是我这东西了 就会插进有slot的地方了</A>
+动态组件 ：  <component> 就这样的只能在这个标签用哦  v-bind:is = '已注册的组件的名称' 
+table里面只能tr 那你就<tr is = '组件名称'>  但是呢 字符串模板（例如 template: '...'）
+单文件 (.vue) 组件
+<script type="text/x-template">  没有这些限制了
+
+
+<keep-alive>用这个东西包裹住<component v-bind:is ="" > </component>
+假如我想写配件就写 驼峰式吧 为什么呢？因为在自己那些模板用 就可以驼峰了   对 prop也是驼峰式 直接用就串联
+在DOM直接用的话 就串联式命名
+
+关于props
+1.传递number 要动态穿 才可以穿 不要直接 tile = '1'
+2.传递boolean的时候  <a ss></a> 这样的ss 默认是true 就后面的和1一样
+3.v-bind = 'post' 这种写法 得props 中也含有相同名称post
+4.我有一个疑问 就是组件中的那个this.a a是props 还是data的？ 他这貌似是props的 那方法的this指向 是否保存一致性？
+5.props:{a:Number}验证写成对象  不是就写成数组 https://vuefe.cn/v2/guide/components-props.html#prop-验证
+6.如果你不想继承特性 就是class不合并 你就inheritAttrs: false
+7.我不确定6 但是有一种 可以像原生那样VUE写https://vuefe.cn/v2/guide/components-props.html#禁用特性继承-disabling-attribute-inheritance   我觉得最主要的是子组件中用了一句 v-bind='$attrs'  哦还有写上input的原始哦 如果有input的话
+
+
+关于slot
+1.<slot></slot>  在组件有slot的时候你可以 <af>你可以输入文字 <a>标签</a>嗯还有组件哦<zz></zz></af>
+2.假如你有多个slot 但是要放特定的位置 那么你可以给slot 给一个属性name 然后<我是组件><template slot='你设置的name'>这样这里的东西就会被放置到特定name的slot了</我是组件>
+3.你也可以对某个普通元素使用slot <p slot='thename'></p>  <组件><template slot='thename'>就可以插进去了</template></组件>
+4.假如你一个<slot></slot> 未命名 那么就是默认插槽<组件><template slot='thename'></template><p>那么我这个p标签就会被插进那个未命名的slot了</p></组件>
+5.默认插槽内容 你可以在模板的<slot>嗯，我这句话就是默认内容了，当组件有东西插进来，那么我就会消失</slot>
+6.父组件模板的内容，全部在父组件作用域内编译；子组件模板的内容，全部在子组件作用域内编译。这个意思就是<我是组件 prop="asd">{{prop}}</我是组件> 这个prop是不存在的 因为他指向的是父组件模板内容
+7.关于作用域插槽 首先他v-bind:todo ='todo' 那么左边todo是什么鬼？那当然不是prop了 因为这是父模板那写的 那么我默认他就是他想绑定下todo 这个todo不是props 就是那些class那样原生的就好 
+然后父模板<template slot-scope='asd'>然后这个很神奇 他可以asd.todo来访问组件内部的东西了</template>
+https://vuefe.cn/v2/guide/components-slots.html#作用域插槽-scoped-slots   说句实话 很有用你认真看清楚就有用了 你不要说什么可以直接在外面v-if啊 = = 那根本就不是 因为你这样 todo in todos 那这个todo 在父模板 怎么访问得到呢? 当然是让他内部了 slot-scope 这是解构  在 2.5.0+，slot-scope 不再局限于 <template> 元素，而是可以在任何元素或任何组件中的插槽内容上使用。
+
+
+关于组件异步的问题
+1.Vue('a-y',function(r,rj){这是promise   然后 r({ template:'<div>I am here</div>' });})
+2.export default {} 这是输出默认对吧 我觉得可以这样 export default funtion(re,rj){re({});} 然后外面Vue.component('a',()=>import('./就上面那个输出函数的那个文件'))
+3.https://vuefe.cn/v2/guide/components-dynamic-async.html#处理加载状态  不太懂 但是貌似 可以异步加载 加载失败后的部件是什么 成功的话就异步加载这个
+4.详细解剖参考 https://www.cnblogs.com/zhishaofei/p/8877227.html
+5.异步子组件对吧 就是在components:{ '组件名称':func(re,rj){} }
+6.
