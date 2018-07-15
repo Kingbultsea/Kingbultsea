@@ -59,7 +59,6 @@ export default {
   methods:{
     init(){
       let height = document.documentElement.clientHeight;
-      document.documentElement.scrollTop = this.$store.state.scrollY;
       this.swiper();
     },
     animateSet(to,form){
@@ -92,13 +91,6 @@ export default {
   },
   mounted(){
     this.init();
-  },
-  beforeRouteEnter (to, from, next){
-    next()
-  },
-  beforeRouteLeave (to, from, next) {
-    this.$store.commit('setScrollY',document.documentElement.scrollTop);
-    next()
   }
   
 

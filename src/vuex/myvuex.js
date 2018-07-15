@@ -6,8 +6,8 @@ const vuexLocal = new VuexPersistence({
 
 let state = {
     initialSlide:1,
-    scrollY:0,
     hideScroll:false,
+    scrollPosition:"",
     qq:'',
     password:''
 };
@@ -15,9 +15,6 @@ let state = {
 const mutations={
     setInitialSlide(state,data){
         state.initialSlide = data;
-    },
-    setScrollY(state,data){
-        state.scrollY = data;
     },
     sethideScroll(state,data){
         state.hideScroll = data;

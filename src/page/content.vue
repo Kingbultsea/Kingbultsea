@@ -24,7 +24,7 @@ export default {
     render(){
       let _vm = this;
       let _c = _vm.$createElement;
-      return _c('div',{class:['hh']},'ÄáÂê')
+      return _c('div',{class:['hh']})
     }
 }
 </script>

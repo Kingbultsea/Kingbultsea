@@ -39,7 +39,7 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',//假如这个是components:"./src/components"  你import a from "components/abc.vue" 就等于那条路径了 
       //import Vue from 'vue'  但是我不明白$是什么意思？ 哦 $符号来缩小范围只命中以关键字结尾的导入语句 但是还不太懂   就是.vue文件了 为什不写entensions呢 是因为有相关配置 所以alias
-      '@': resolve('src'),
+      '@': resolve('src')
     }
   },
   module: {

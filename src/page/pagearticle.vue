@@ -20,23 +20,26 @@
 </router-link>
 </div>
 
+<Page></Page>
+
 
 </div>
 </transition>
 </template>
 <script>
 import Article from "../components/Article.vue"
-
+import Page from "../components/pageslice.vue";
 export default {
   data(){
   return {
+	
     lis:[{title:'如如果如果如果如果如果如果如果如果如果如果如果如果如果如果如果如果如果如果果',comment:'可是这样和死了有什么区别...',time:'2018年6月28日',reply:'125',pictureUrl:'http://wx1.sinaimg.cn/mw690/006Zdy2vgy1frzprkg7rjj32gw1es7te.jpg'},
 {title:'琉璃神社壁纸包2018年5月号',comment:'就是就是就是收集了很多东西了...',time:'2018年6月28日',reply:'999',pictureUrl:'http://wx3.sinaimg.cn/mw690/006Zdy2vgy1frvt0sktl5j31hc0u0e82.jpg'},
 {title:'琉璃神社壁纸包2018年5月号',comment:'就是就是就是收集了很多东西了...',time:'2018年6月28日',reply:'999',pictureUrl:'http://wx3.sinaimg.cn/mw690/006Zdy2vgy1frvt0sktl5j31hc0u0e82.jpg'}]
     }
   },
   components:{
-    Article
+    Article,Page
   }
 }
 </script>
