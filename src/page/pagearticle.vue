@@ -16,7 +16,7 @@
 
 <div>
 <router-link v-for="(li,index) in lis" :to="{path:'content',query:{plan:index} }" :key="index">
-<Article      :class="mystyle.firstarticle"    :title="li.title"  :comment="li.comment"  :time="li.time"  :reply="li.reply"  :pictureUrl="li.pictureUrl"></Article>
+<Article  style="position:relative"    :class="mystyle.firstarticle"    :title="li.title"  :comment="li.comment"  :time="li.time"  :reply="li.reply"  :pictureUrl="li.pictureUrl"></Article>
 </router-link>
 </div>
 

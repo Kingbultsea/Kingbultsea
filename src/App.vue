@@ -102,4 +102,7 @@ display:flex;
 .opcity-enter, .opcity-leave-to{
   opacity: 0;
 }
+a{
+ text-decoration: none; 
+}
 </style>
