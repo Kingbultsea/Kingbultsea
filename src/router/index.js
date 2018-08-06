@@ -18,7 +18,7 @@ Vue.use(Router)
 
 
 export default new Router({
-  mode: 'history',
+  //mode: 'history',  //他们说打包的时候，要删掉。我改了就炸了 不知道是不是spa的问题了。
   routes: [
     {
       path:'',  redirect: '/article'//配置index可以做到定向

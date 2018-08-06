@@ -50,7 +50,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),//路径
     assetsSubDirectory: 'static',//构成打包好的目录 当然 每次都会被覆盖的
-    assetsPublicPath: './',
+    assetsPublicPath: './',//assetsPublicPath属性作用是指定编译发布的根目录，‘/’指的是项目的根目录 ，’./’指的是当前目录
 
     /**
      * Source Maps

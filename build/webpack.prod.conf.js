@@ -75,6 +75,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         // more options:
         // https://github.com/kangax/html-minifier#options-quick-reference
       },
+	  chunks: ['manifest', 'vendor', 'app'],//有什么问题干他https://www.cnblogs.com/hcxy/p/7999360.html
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       chunksSortMode: 'dependency'
     }),
