@@ -1,11 +1,1 @@
-Ò»¸ö½ÅÊÖ¼Ü´î½¨µÄÊÖ»úÍ¼¿â 
-manifest vuex-persist µ¥Ò³ÃæÓ¦ÓÃ Prerender SPA Plugin¿É½â¾öSEO  
-Ä¿Ç°ÊÇÄ£°å ²¢Ã»ÓĞºóÌ¨
-
-Ï²»¶¿ÉÒÔ×Ô¼º¸ÄÔìÏÂ ÄÃ×ß
-
-![Image text](https://raw.githubusercontent.com/Kingbultsea/Kingbultsea/master/img/zzz.png)
-
-![Image text](https://github.com/Kingbultsea/Kingbultsea/blob/master/img/%7DZM%7D%60EU4J%25G%25F0%7BXCR%7D%24_%5DA.png)
- 
-![Image text](https://github.com/Kingbultsea/Kingbultsea/blob/master/img/~SHJ~BJ8JYDN%24%60%25%60JZ%244JQI.png)
+å•Š
